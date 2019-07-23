@@ -1,0 +1,9 @@
+https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-windows.html
+
+https://www.baeldung.com/elasticsearch-java
+
+9200 is for REST.
+9300 for nodes communication...
+
+https://dzone.com/articles/elasticsearch-with-spring-boot-application *****
+https://www.elastic.co/downloads/past-releases/elasticsearch-6-8-0
