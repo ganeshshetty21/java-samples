@@ -7,7 +7,7 @@ public class LongSubStringMain {
 
 	public static void main(String[] args) {
 		LongSubStr longSubStr = new LongSubStr();
-		longSubStr.getLongestSubString("ABCDABCDE");
+		longSubStr.getLongestSubString("AABCDABCDE");
 		longSubStr.getLongestSubString("ABCDAKBJLMCDBABCDEFGHIJKLMNOPQRSTUVWXYZA");
 	}
 
@@ -21,7 +21,9 @@ class LongSubStr {
 		for (int i = 0; i < in.length(); i++) {
 			if (chars.contains(in.charAt(i))) {
 				chars.clear();
-				i--;
+				if (in.charAt(i) != in.charAt(i-1)) {
+					i--;
+				}
 				tempLongSubStr = "";
 			}
 			tempLongSubStr = tempLongSubStr + (in.charAt(i));
