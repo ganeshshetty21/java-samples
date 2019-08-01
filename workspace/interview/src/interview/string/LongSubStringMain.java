@@ -5,38 +5,33 @@ import java.util.Set;
 
 public class LongSubStringMain {
 
-	public static void main(String[] args) { 
-		LongSubStr longSubStr = new LongSubStr(); 
+	public static void main(String[] args) {
+		LongSubStr longSubStr = new LongSubStr();
 		longSubStr.getLongestSubString("ABCDABCDE");
-		longSubStr.getLongestSubString("ABCDAKBJLMCDBABCDEFGHIJKLMNOPQRSTUVWXYZ");
+		longSubStr.getLongestSubString("ABCDAKBJLMCDBABCDEFGHIJKLMNOPQRSTUVWXYZA");
 	}
 
 }
 
 class LongSubStr {
-	public String getLongestSubString(String arg) {
+	public String getLongestSubString(String in) {
+		String tempLongSubStr = "";
 		String longSubStr = "";
-		for (int j = 0; j < arg.length(); j++) {
-			String tempSubStr = "";
-			Set<Character> charSet = new HashSet<>();
-			for (int i = j; i < arg.length(); i++) {
-				char charRead = arg.charAt(i);
-				if (charSet.contains(charRead)) {
-					charSet = new HashSet<>();
-					tempSubStr = "" + charRead;
-				} else {
-					tempSubStr = tempSubStr + charRead;
-				}
-				charSet.add(charRead);
-				//print(charSet, tempSubStr);
-				System.out.println(" tempSubStr "+tempSubStr);
+		Set<Character> chars = new HashSet<>();
+		for (int i = 0; i < in.length(); i++) {
+			if (chars.contains(in.charAt(i))) {
+				chars.clear();
+				i--;
+				tempLongSubStr = "";
 			}
-			if (longSubStr.length() < tempSubStr.length()) {
-				longSubStr = tempSubStr;
-				System.out.println(" longSubStr "+longSubStr);
+			tempLongSubStr = tempLongSubStr + (in.charAt(i));
+			chars.add(in.charAt(i));
+			if (longSubStr.length() < tempLongSubStr.length()) {
+				longSubStr = tempLongSubStr;
 			}
+			print(chars, longSubStr);
 		}
-		System.out.println(" return "+longSubStr);
+
 		return longSubStr;
 	}
 
@@ -47,4 +42,3 @@ class LongSubStr {
 
 	}
 }
- 

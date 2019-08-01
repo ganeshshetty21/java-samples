@@ -40,10 +40,8 @@ class QueueImpl<T> implements Queue<T> {
 	}
 
 	@Override
-	public T deQueue() {
-		T t = values.get(0);
-		values.remove(0);
-		return t;
+	public T deQueue() { 
+		return values.remove(0);
 	}
 
 	@Override

@@ -3,32 +3,21 @@ package interview.others;
 public class StringToIntWidoutSplFunxn {
 
 	public static void main(String[] args) {
-		String arg = "1234";
+		String s = "1234";
 
-		char[] chars = arg.toCharArray();
-		int powerFactor = 0;
-		int sum = 0;
-
-		for (int index = chars.length - 1; index > -1; index--) {
-			int temp = chars[index] - '0';
-			System.out.println(" temp " + temp);
-			temp = temp * powerFactored(powerFactor);
-			System.out.println(" powered " + temp);
-			powerFactor = powerFactor + 1;
-			System.out.println("powerFactor " + powerFactor);
-			sum = sum + temp;
-			System.out.println(" sum " + sum);
+		char[] chars = s.toCharArray();
+		int result = 0;
+		int temp = -1;
+		for (int i = 0; i < chars.length; i++) {
+			System.out.println("chars[i] " + chars[i]);
+			temp = chars[i] - '0';
+			System.out.println("temp " + temp);
+			result = (result * 10) + temp;
+			System.out.println("result " + result);
 		}
 
-	}
+		System.out.println(result);
 
-	private static int powerFactored(int powerFactor) {
-		int result = 1;
-		for (int i = 0; i < powerFactor; i++) {
-			result = result * 10;
-		}
-
-		return result;
 	}
 
 }
